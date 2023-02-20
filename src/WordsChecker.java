@@ -4,14 +4,16 @@ import java.util.Set;
 
 public class WordsChecker {
     private String text;
+    private Set<String> set;
 
     public WordsChecker(String text) {
         this.text = text;
+        set = new HashSet<>();
     }
-    public boolean hasWord (String word){
-        Set<String> set = new HashSet<>();
+
+    public boolean hasWord(String word) {
         set.addAll(List.of(text.split("\\P{IsAlphabetic}+")));
-        if (set.contains(word)){
+        if (set.contains(word)) {
             return true;
         }
         return false;
